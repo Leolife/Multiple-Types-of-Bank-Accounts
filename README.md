@@ -16,3 +16,4 @@ user to select from on the menu include:
 There is basic functionality such as depositing, withdrawing, and it includes interest rates. There 
 are exceptions included to ensure realistic functiuonality. There are also other features
 in particular classes such as a minimum balance.
+![image](https://user-images.githubusercontent.com/95724102/208526072-b9577162-c25e-471d-879d-57a3bd3de1ee.png)
