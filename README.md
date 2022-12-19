@@ -14,6 +14,6 @@ user to select from on the menu include:
 6) A certificate of deposit account.
 
 There is basic functionality such as depositing, withdrawing, and it includes interest rates. There 
-are exceptions included to ensure realistic functiuonality. There are also other features
+are exceptions included to ensure realistic functionality. There are also other features
 in particular classes such as a minimum balance.
 ![image](https://user-images.githubusercontent.com/95724102/208529298-3e8c7fc1-4f3e-4443-9fe7-cf341922b39d.png)
