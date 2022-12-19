@@ -29,8 +29,8 @@ public:
             cout << endl << setw(37) << "--------------------\n";
             cout << setw(48) << "|----------| Your Bank Accounts |----------|" << endl;
             cout << setw(37) << "-------------------- " << endl;
-            cout << setw(45) << "1: Checking Account with service charge " << endl << setw(48) << "2: Checking Account with NO service charge " << endl << setw(44) << "3: Checking Account with High Interest " << endl
-                << setw(24) << "4: Savings Account " << endl << setw(43) << "5: Savings Account with High Interest " << endl << setw(31) << "6: Certificate of Deposit " << endl;
+            cout << setw(42) << "1: Service Charge Checking Account " << endl << setw(45) << "2: No Service Charge Checking Account " << endl << setw(41) << "3: High Interest Checking Account " << endl
+                << setw(26) << "4: Savings Account " << endl << setw(40) << "5: High Interest Savings Account " << endl << setw(33) << "6: Certificate of Deposit " << endl;
             cout << setw(48) << "|------------------------------------------|" << endl;
             cout << endl;
             cout << setw(44) << "\nSelect which bank account to use (1-6): ";
