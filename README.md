@@ -12,6 +12,7 @@ user to select from on the menu include:
 4) A savings account,
 5) A savings account with high interest,
 6) A certificate of deposit account.
+
 There is basic functionality such as depositing, withdrawing, interest rates, and there 
 are exceptions included to ensure realistic functiuonality. There are also other features
 in particular classes such as a minimum balance.
