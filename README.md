@@ -1,5 +1,5 @@
 # Multiple-Types-of-Bank-Accounts
-A c++ project that includes different types of bank account classes to be accessed and used.
+A C++ project that includes different types of bank account classes to be accessed and used.
 
 This is a project that I have built and that I update from time to time as I learn new concepts.
 This project initially prompts the user to select a type of bank account to use from a menu.
