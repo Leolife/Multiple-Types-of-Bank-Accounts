@@ -35,6 +35,8 @@ public:
             cout << endl;
             cout << setw(44) << "\nSelect which bank account to use (1-6): ";
             cin >> selection;
+            cin.clear();
+            cin.ignore(1000, '\n');
             cout << endl;
             if (selection >= 1 && selection <= 6)
             {

@@ -64,12 +64,16 @@ public:
         setBalance(10000);//assumed initial balance for sake of this particular CD transaction scenaio
 
         cout << "Initial balance: $" << balance << endl;
-        cout << "Amount of months it has been for your CD: ";
-        cin >> cdMonths;
+        /*cout << "Amount of months it has been for your CD: ";
+        cin >> cdMonths;*/
         balance = balance + (balance * ((cdMonths / static_cast<double>(12)) * (getInterestRate() / 100)));
 
         while (true)
         {
+            cout << "Amount of months it has been for your CD: ";
+            cin >> cdMonths;
+            cin.clear();
+            cin.ignore(1000, '\n');
             if (cdMonths < 6)
             {
                 cout << "Cannot withdraw until maturity month is reached. Maturity month: " << getMaturityMonths() << ".\n";
