@@ -1,5 +1,5 @@
 # Multiple-Types-of-Bank-Accounts
-A c++ project that includes different types of bank account classes to be accessed and used.
+A C++ project that includes different types of bank account classes to be accessed and used.
 
 This is a project that I have built and that I update from time to time as I learn new concepts.
 This project initially prompts the user to select a type of bank account to use from a menu.
@@ -14,6 +14,6 @@ user to select from on the menu include:
 6) A certificate of deposit account.
 
 There is basic functionality such as depositing, withdrawing, and it includes interest rates. There 
-are exceptions included to ensure realistic functiuonality. There are also other features
+are exceptions included to ensure realistic functionality. There are also other features
 in particular classes such as a minimum balance.
-![image](https://user-images.githubusercontent.com/95724102/208526072-b9577162-c25e-471d-879d-57a3bd3de1ee.png)
+![image](https://user-images.githubusercontent.com/95724102/208529298-3e8c7fc1-4f3e-4443-9fe7-cf341922b39d.png)
