@@ -59,19 +59,19 @@ public:
     {
         string answer;
         double amount;
+        bool firstLoop = false;
+        bool secondLoop = false;
         setInterestRate();
         setMaturityMonths();
         setBalance(10000);//assumed initial balance for sake of this particular CD transaction scenaio
 
         cout << "Initial balance: $" << balance << endl;
-        /*cout << "Amount of months it has been for your CD: ";
-        cin >> cdMonths;*/
-        balance = balance + (balance * ((cdMonths / static_cast<double>(12)) * (getInterestRate() / 100)));
 
-        while (true)
+        while (!firstLoop)
         {
             cout << "Amount of months it has been for your CD: ";
             cin >> cdMonths;
+            balance = balance + (balance * ((cdMonths / static_cast<double>(12)) * (getInterestRate() / 100)));
             cin.clear();
             cin.ignore(1000, '\n');
             if (cdMonths < 6)
@@ -81,7 +81,41 @@ public:
             }
             else if (cdMonths >= 6)
             {
-                cout << "\nCurrent balance (including interest): $" << fixed << setprecision(2) << balance << endl;
+                while (!secondLoop)
+                {
+                    cout << "\nCurrent balance (including interest): $" << fixed << setprecision(2) << balance << endl;
+                    cout << "Would you like to make a withdrawal? (Y or N): ";
+                    cin >> answer;
+
+                    if (answer == "Y" || answer == "y")
+                    {
+                        cout << "Withdrawal amount: $";
+                        cin >> amount;
+                        if (typeid(cin) != typeid(int))
+                        {
+                            cout << "Invalid response" << endl;
+                        }
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                        balance -= amount;
+                        if (balance < 0)
+                        {
+                            balance += amount;
+                            cout << "\nError: amount exceeds balance" << endl;
+                        }
+                    }
+                    else if (answer == "N" || answer == "n")
+                    {
+                        cout << endl;
+                        firstLoop = true;
+                        secondLoop = true;
+                    }
+                    else
+                    {
+                        cout << "Invalid response" << endl;
+                    }
+                }
+                /*cout << "\nCurrent balance (including interest): $" << fixed << setprecision(2) << balance << endl;
                 cout << "Would you like to make a withdrawal? (Y or N): ";
                 cin >> answer;
 
@@ -103,8 +137,9 @@ public:
                 }
                 else
                 {
+                    balance = initialBalance;
                     cout << "Invalid response" << endl;
-                }
+                }*/
             }
             else
             {

@@ -50,8 +50,6 @@ public:
                 //writing a check to withdraw or deposit money
                 cout << "\n -----\n|Check|\n -----\nCurrent Balance: $" << balance << "\nWould you like to make a withdrawal / deposit? (Y or N): ";
                 cin >> answer;
-                /*cin.clear();
-                cin.ignore(1000, '\n');*/
 
                 if (answer == "Y" || answer == "y")
                 {
