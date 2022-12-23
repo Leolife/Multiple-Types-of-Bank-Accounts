@@ -67,55 +67,20 @@ public:
 
         cout << "Initial balance: $" << balance << endl;
 
-        while (!firstLoop)
+        cout << "Amount of months it has been for your CD: ";
+        cin >> cdMonths;
+        balance = balance + (balance * ((cdMonths / static_cast<double>(12)) * (getInterestRate() / 100)));
+        cin.clear();//lines 73 and 74 make sure the program does not endlessly loop with the same input
+        cin.ignore(1000, '\n');
+        if (cdMonths < 6)
         {
-            cout << "Amount of months it has been for your CD: ";
-            cin >> cdMonths;
-            balance = balance + (balance * ((cdMonths / static_cast<double>(12)) * (getInterestRate() / 100)));
-            cin.clear();
-            cin.ignore(1000, '\n');
-            if (cdMonths < 6)
+            cout << "Cannot withdraw until maturity month is reached. Maturity month: " << getMaturityMonths() << ".\n";
+        }
+        else if (cdMonths >= 6)
+        {
+            while (true)
             {
-                cout << "Cannot withdraw until maturity month is reached. Maturity month: " << getMaturityMonths() << ".\n";
-                break;
-            }
-            else if (cdMonths >= 6)
-            {
-                while (!secondLoop)
-                {
-                    cout << "\nCurrent balance (including interest): $" << fixed << setprecision(2) << balance << endl;
-                    cout << "Would you like to make a withdrawal? (Y or N): ";
-                    cin >> answer;
-
-                    if (answer == "Y" || answer == "y")
-                    {
-                        cout << "Withdrawal amount: $";
-                        cin >> amount;
-                        if (typeid(cin) != typeid(int))
-                        {
-                            cout << "Invalid response" << endl;
-                        }
-                        cin.clear();
-                        cin.ignore(1000, '\n');
-                        balance -= amount;
-                        if (balance < 0)
-                        {
-                            balance += amount;
-                            cout << "\nError: amount exceeds balance" << endl;
-                        }
-                    }
-                    else if (answer == "N" || answer == "n")
-                    {
-                        cout << endl;
-                        firstLoop = true;
-                        secondLoop = true;
-                    }
-                    else
-                    {
-                        cout << "Invalid response" << endl;
-                    }
-                }
-                /*cout << "\nCurrent balance (including interest): $" << fixed << setprecision(2) << balance << endl;
+                cout << "\nCurrent balance (including interest): $" << fixed << setprecision(2) << balance << endl;
                 cout << "Would you like to make a withdrawal? (Y or N): ";
                 cin >> answer;
 
@@ -123,6 +88,8 @@ public:
                 {
                     cout << "Withdrawal amount: $";
                     cin >> amount;
+                    cin.clear();//lines 91 and 92 make sure the program does not endlessly loop with the same input
+                    cin.ignore(1000, '\n');
                     balance -= amount;
                     if (balance < 0)
                     {
@@ -137,14 +104,13 @@ public:
                 }
                 else
                 {
-                    balance = initialBalance;
                     cout << "Invalid response" << endl;
-                }*/
+                }
             }
-            else
-            {
-                cout << "Invalid response" << endl;
-            }
+        }
+        else
+        {
+            cout << "Invalid response" << endl;
         }
     }
 

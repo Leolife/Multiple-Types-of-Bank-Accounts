@@ -53,6 +53,8 @@ public:
             {
                 cout << "Withdrawal amount: $";
                 cin >> amount;
+                cin.clear();//lines 56 and 57 make sure the program does not endlessly loop with the same input
+                cin.ignore(1000, '\n');
                 balance -= amount;
                 if (balance < getMinimumBalance())
                 {

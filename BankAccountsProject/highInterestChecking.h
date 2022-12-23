@@ -29,7 +29,7 @@ public:
     {
         interestRate = intRate;
     }
-    void setMinimumBalance(double minBal = 100)
+    void setMinimumBalance(double minBal = 100.0)
     {
         minimumBalance = minBal;
     }
@@ -60,6 +60,8 @@ public:
                     {
                         cout << "Withdrawal amount: $";
                         cin >> amount;
+                        cin.clear();//lines 64 and 65 make sure the program does not endlessly loop with the same input
+                        cin.ignore(1000, '\n');
                         balance -= amount;
                         if (balance < getMinimumBalance())
                         {
@@ -71,6 +73,8 @@ public:
                     {
                         cout << "Deposit amount: $";
                         cin >> amount;
+                        cin.clear();//lines 76 and 77 make sure the program does not endlessly loop with the same input
+                        cin.ignore(1000, '\n');
                         balance += amount;
                     }
                     else

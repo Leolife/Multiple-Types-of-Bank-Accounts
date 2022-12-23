@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <typeinfo>
 #include "checkingAccount.h"
 
 using namespace std;
@@ -88,14 +87,10 @@ public:
                     {
                         cout << "Withdrawal amount: $";
                         cin >> amount;
-                        cin.clear();
+                        cin.clear();//lines 90 and 91 make sure the program does not endlessly loop with the same input
                         cin.ignore(1000, '\n');
                         balance -= amount;
                         //prevents user from withdrawing more than they have in their account
-                      /*  if (typeid(cin) != typeid(int)) NEED TO FIX
-                        {
-                            cout << "Invalid response" << endl;
-                        }*/
                         if (balance < 0)
                         {
                             balance += amount;
@@ -105,21 +100,16 @@ public:
                         {
                             numberOfChecksWritten++;
                         }
-                        /*else   THIS DOESNT WORK?
+                        else
                         {
                             cout << "Invalid response" << endl;
-                        }*/
+                        }
                     }
                     else if (answer2 == "D" || answer2 == "d")
                     {
                         cout << "Deposit amount: $";
                         cin >> amount;
-                        if (typeid(cin) != typeid(int))
-                        {
-                            cout << "Invalid response" << endl;
-                            numberOfChecksWritten--;
-                        }
-                        cin.clear();
+                        cin.clear();//lines 112 and 113 make sure the program does not endlessly loop with the same input
                         cin.ignore(1000, '\n');
                         balance += amount;
                         numberOfChecksWritten++;

@@ -35,7 +35,7 @@ public:
             cout << endl;
             cout << setw(44) << "\nSelect which bank account to use (1-6): ";
             cin >> selection;
-            cin.clear();
+            cin.clear();//lines 38 and 39 make sure the program does not endlessly loop with the same input
             cin.ignore(1000, '\n');
             cout << endl;
             if (selection >= 1 && selection <= 6)

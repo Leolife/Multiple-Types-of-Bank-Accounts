@@ -63,6 +63,8 @@ public:
             {
                 cout << "Withdrawal amount: $";
                 cin >> amount;
+                cin.clear();//lines 66 and 67 make sure the program does not endlessly loop with the same input
+                cin.ignore(1000, '\n');
                 balance -= amount;
                 //prevents user from withdrawing more than they have in their account
                 if (balance < 0)
@@ -97,6 +99,8 @@ public:
             {
                 cout << "Deposit amount: $";
                 cin >> amount;
+                cin.clear();//lines 102 and 103 make sure the program does not endlessly loop with the same input
+                cin.ignore(1000, '\n');
                 balance += amount;
             }
             else if (answer == "N" || answer == "n")
