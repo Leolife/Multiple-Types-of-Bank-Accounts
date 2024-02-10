@@ -13,107 +13,25 @@ protected:
     double balance;
 
 public:
-    bankAccount()
-    {
-        name = "N/A";
-        accountNumber = 0;
-        balance = 100.0;
-    }
+    bankAccount();
+
     ~bankAccount() {};
 
-    string getName()
-    {
-        return name;
-    }
-    int getAccountNumber()
-    {
-        return accountNumber;//returns account number
-    }
-    double getBalance()
-    {
-        return balance;
-    }
+    string getName();
 
-    void setName(string n)
-    {
-        name = n;
-    }
-    void setAccountNumber() //static account number generator, sets account numbers for all types of accounts- FIX
-    {
-        static int acctNumber = 100;
-        accountNumber = acctNumber;
-        acctNumber++;
-    }
-    void setBalance(double bal)
-    {
-        balance = bal;
-    }
+    int getAccountNumber();
 
-    virtual void withdraw()
-    {
-        string answer;
-        double amount;
-        while (true)
-        {
-            cout << "Balance: $" << balance << endl;
-            cout << "Would you like to make a withdrawal? (Y or N): ";
-            cin >> answer;
-            //processes withdrawal
-            if (answer == "Y" || answer == "y")
-            {
-                cout << "Withdrawal amount: $";
-                cin >> amount;
-                cin.clear();//lines 66 and 67 make sure the program does not endlessly loop with the same input
-                cin.ignore(1000, '\n');
-                balance -= amount;
-                //prevents user from withdrawing more than they have in their account
-                if (balance < 0)
-                {
-                    balance += amount;
-                    cout << "Error: amount exceeds balance.\n";
-                }
-            }
-            else if (answer == "N" || answer == "n")
-            {
-                cout << endl;
-                break;
-            }
-            else
-            {
-                cout << "Invalid response" << endl; //accounts for invalid input other than "y" or "n" & returns to the top of the while loop
-            }
-        }
-    }
+    double getBalance();
 
-    void deposit()
-    {
-        string answer;
-        double amount;
-        while (true)
-        {
-            cout << "Balance: $" << balance << endl;
-            cout << "Would you like to make a deposit? (Y or N): ";
-            cin >> answer;
-            //processes deposit
-            if (answer == "Y" || answer == "y")
-            {
-                cout << "Deposit amount: $";
-                cin >> amount;
-                cin.clear();//lines 102 and 103 make sure the program does not endlessly loop with the same input
-                cin.ignore(1000, '\n');
-                balance += amount;
-            }
-            else if (answer == "N" || answer == "n")
-            {
-                cout << endl;
-                break;
-            }
-            else
-            {
-                cout << "Invalid response" << endl;
-            }
-        }
-    }
+    void setName(string n);
+
+    void setAccountNumber(); //static account number generator, sets account numbers for all types of accounts- FIX
+
+    void setBalance(double bal);
+
+    virtual void withdraw();
+
+    void deposit();
 
     //pure virtual monthly statement function to use later
     virtual void createMonthlyStatement() = 0;
