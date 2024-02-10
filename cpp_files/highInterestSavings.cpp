@@ -11,7 +11,6 @@ highInterestSavings::highInterestSavings()
 {
     minimumBalance = 0.0;
 }
-highInterestSavings::~highInterestSavings() {};
 
 double highInterestSavings::getMinimumBalance()
 {

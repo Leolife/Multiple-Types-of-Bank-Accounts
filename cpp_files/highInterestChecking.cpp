@@ -12,7 +12,6 @@ highInterestChecking::highInterestChecking()
     minimumBalance = 0.0;
     interestRate = 0.0;
 }
-highInterestChecking::~highInterestChecking() {};
 
 double highInterestChecking::getInterestRate()
 {

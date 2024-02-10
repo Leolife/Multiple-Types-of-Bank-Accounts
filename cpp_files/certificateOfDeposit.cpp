@@ -13,7 +13,6 @@ certificateOfDeposit::certificateOfDeposit()
     maturityMonths = 0;
     cdMonths = 0;
 }
-certificateOfDeposit::~certificateOfDeposit() {};
 
 double certificateOfDeposit::getInterestRate()
 {

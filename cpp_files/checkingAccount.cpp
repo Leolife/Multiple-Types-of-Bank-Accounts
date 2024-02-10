@@ -13,4 +13,3 @@ checkingAccount::checkingAccount()
     accountNumber = 0;
     balance = 100.0;
 }
-checkingAccount::~checkingAccount() {};

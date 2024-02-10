@@ -12,7 +12,6 @@ bankAccount::bankAccount()
     accountNumber = 0;
     balance = 100.0;
 }
-bankAccount::~bankAccount() {};
 
 string bankAccount::getName()
 {

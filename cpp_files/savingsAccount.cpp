@@ -11,7 +11,6 @@ savingsAccount::savingsAccount()
 {
     interestRate = 0.0;
 }
-savingsAccount::~savingsAccount() {};
 
 double savingsAccount::getInterestRate()
 {

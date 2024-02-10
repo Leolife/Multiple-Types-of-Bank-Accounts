@@ -13,7 +13,6 @@ serviceChargeChecking::serviceChargeChecking()
     checkLimitServiceCharge = 0.0;
     numberOfChecksWritten = 0;
 }
-serviceChargeChecking::~serviceChargeChecking() {};
 
 double serviceChargeChecking::getAccountServiceCharge()
 {

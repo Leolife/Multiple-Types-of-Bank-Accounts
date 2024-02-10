@@ -12,7 +12,6 @@ noServiceChargeChecking::noServiceChargeChecking()
     minimumBalance = 0.0;
     interestRate = 0.0;
 }
-noServiceChargeChecking::~noServiceChargeChecking() {};
 
 double noServiceChargeChecking::getMinimumBalance()
 {
