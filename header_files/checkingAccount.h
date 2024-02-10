@@ -9,12 +9,8 @@ using namespace std;
 class checkingAccount : public bankAccount
 {
 public:
-    checkingAccount()
-    {
-        name = "N/A";
-        accountNumber = 0;
-        balance = 100.0;
-    }
+    checkingAccount();
+    
     ~checkingAccount() {};
 
     //pure virtual check function to use later
